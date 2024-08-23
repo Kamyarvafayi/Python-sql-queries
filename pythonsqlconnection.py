@@ -61,3 +61,9 @@ for k in range(150, 999):
     )
 
 conn.commit()
+
+cursor.execute("alter table dsp.products add newcolumn tinyint")
+conn.commit()
+
+cursor.execute("update dsp.products set newcolumn = 10 where newcolumn is null")
+conn.commit()
